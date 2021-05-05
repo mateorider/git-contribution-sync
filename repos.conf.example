@@ -1,0 +1,31 @@
+# ---------------------------------------------------------------------------
+# Configuration for mirror.sh
+#
+# This file is sourced as bash. Edit the values below, then run ./mirror.sh
+# It is gitignored so your private repo paths never get pushed.
+# ---------------------------------------------------------------------------
+
+# Absolute paths to the WORK repos whose commit activity you want to mirror.
+# Only commit DATES are read from these — never code, messages, or diffs.
+SOURCES=(
+  # /Users/mattrider/Workspace/src/github/work/some-service
+  # /Users/mattrider/Workspace/src/github/work/another-repo
+)
+
+# Which author identities count as "you" in those repos. A commit is mirrored
+# only if its author matches one of these (substring of "Name <email>").
+# Your work commits are almost certainly authored as matt@pickleai.com.
+AUTHORS=(
+  "matt@pickleai.com"
+)
+
+# Identity stamped onto the generated mirror commits in THIS repo.
+# IMPORTANT: MIRROR_EMAIL must be an email VERIFIED on the GitHub account that
+# owns this repo, or GitHub will not count the commits on your graph.
+MIRROR_NAME="mateorider"
+MIRROR_EMAIL="riderm17@gmail.com"
+
+# Optional: only mirror commits on/after this date (YYYY-MM-DD).
+# GitHub's contribution graph only displays roughly the trailing 12 months,
+# so there's little point importing much older history.
+# SINCE="2024-10-01"
